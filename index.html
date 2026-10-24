@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f1e8" />
+  <title>Nandani Handmade Gifts | Handmade with Love</title>
+  <meta name="description" content="Shop handmade keychains, resin-inspired gifts, stickers and personalized keepsakes from Nandani Handmade Gifts." />
+  <style>
+    :root {
+      --cream: #f7f1e8;
+      --paper: #fffdf9;
+      --ink: #29231f;
+      --muted: #766d65;
+      --rose: #c77f72;
+      --rose-dark: #a85f54;
+      --line: #e9ded2;
+      --sage: #87957b;
+      --shadow: 0 12px 35px rgba(57, 42, 31, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    .announcement { background: var(--ink); color: #fff9f2; text-align: center; padding: 9px 12px; font-size: 12px; letter-spacing: .08em; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(247,241,232,.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(233,222,210,.8); }
+    .nav { max-width: 1180px; margin: auto; padding: 17px 24px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 190px; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--rose); border-radius: 50%; color: var(--rose-dark); font-family: Georgia, serif; font-size: 23px; font-style: italic; }
+    .brand-name { font-family: Georgia, serif; font-size: 18px; letter-spacing: .03em; line-height: 1.1; }
+    .brand-sub { font-size: 9px; color: var(--muted); letter-spacing: .2em; margin-top: 5px; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 26px; align-items: center; color: #554b44; font-size: 13px; }
+    .nav-links a:hover { color: var(--rose-dark); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-btn { border: 1px solid var(--line); background: var(--paper); border-radius: 50%; width: 39px; height: 39px; display: grid; place-items: center; position: relative; }
+    .cart-count { position: absolute; right: -4px; top: -5px; background: var(--rose-dark); color: white; border-radius: 50%; min-width: 17px; height: 17px; font-size: 10px; display: grid; place-items: center; }
+    .menu-toggle { display: none; }
+    .hero { max-width: 1180px; margin: 0 auto; padding: 54px 24px 64px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 48px; align-items: center; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--rose-dark); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; }
+    .eyebrow:before { content: ""; width: 28px; height: 1px; background: var(--rose); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(43px, 5.2vw, 70px); line-height: 1.04; letter-spacing: -.04em; margin: 20px 0; max-width: 560px; }
+    h1 em { color: var(--rose-dark); font-weight: 400; }
+    .hero-copy { max-width: 470px; color: var(--muted); line-height: 1.8; font-size: 15px; }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { border: 1px solid var(--ink); background: var(--ink); color: white; padding: 13px 20px; border-radius: 3px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-size: 12px; letter-spacing: .04em; transition: .2s; }
+    .btn:hover { background: var(--rose-dark); border-color: var(--rose-dark); transform: translateY(-1px); }
+    .btn-outline { color: var(--ink); background: transparent; border-color: #cdbdb0; }
+    .btn-outline:hover { color: white; }
+    .hero-note { display: flex; align-items: center; gap: 11px; margin-top: 30px; font-size: 11px; color: var(--muted); }
+    .tiny-stars { color: #b47c44; letter-spacing: 2px; font-size: 14px; }
+    .hero-art { position: relative; min-height: 470px; }
+    .hero-photo { width: 84%; height: 450px; margin-left: auto; border-radius: 48% 48% 5px 5px; overflow: hidden; background: #e4cfc0; box-shadow: var(--shadow); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .floating-card { position: absolute; left: 0; bottom: 26px; width: 190px; padding: 15px; background: var(--paper); box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .floating-card img { width: 100%; height: 105px; object-fit: cover; display: block; margin-bottom: 11px; }
+    .floating-card strong { font-family: Georgia, serif; font-size: 17px; font-weight: 400; }
+    .floating-card small { display: block; color: var(--muted); font-size: 10px; margin-top: 4px; }
+    .round-stamp { position: absolute; top: 15px; right: 0; border: 1px solid var(--rose); color: var(--rose-dark); width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; text-align: center; font-size: 10px; line-height: 1.5; letter-spacing: .1em; transform: rotate(9deg); background: rgba(255,253,249,.8); }
+    .benefits { background: var(--paper); border-block: 1px solid var(--line); }
+    .benefit-row { max-width: 1180px; margin: auto; padding: 22px 24px; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .benefit { display: flex; align-items: center; justify-content: center; gap: 11px; color: #5e544c; font-size: 12px; }
+    .benefit span:first-child { font-size: 21px; }
+    section { scroll-margin-top: 90px; }
+    .section { max-width: 1180px; margin: auto; padding: 76px 24px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 27px; }
+    .section-kicker { color: var(--rose-dark); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
+    h2 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 47px); letter-spacing: -.03em; margin-bottom: 0; }
+    .section-desc { color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 350px; margin-bottom: 3px; }
+    .toolbar { display: flex; gap: 12px; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter { border: 1px solid var(--line); background: transparent; padding: 9px 14px; border-radius: 30px; color: #665b52; font-size: 11px; }
+    .filter.active, .filter:hover { background: var(--ink); color: white; border-color: var(--ink); }
+    .search-sort { display: flex; gap: 8px; }
+    .search { width: 185px; border: 1px solid var(--line); background: var(--paper); padding: 10px 12px; outline: none; border-radius: 3px; font-size: 12px; }
+    .sort { border: 1px solid var(--line); background: var(--paper); padding: 10px; font-size: 12px; color: #5e544c; border-radius: 3px; }
+    .product-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+    .product-card { min-width: 0; }
+    .product-image { position: relative; background: #eadfd4; aspect-ratio: 4 / 4.6; overflow: hidden; }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s; }
+    .product-card:hover .product-image img { transform: scale(1.05); }
+    .product-tag { position: absolute; left: 10px; top: 10px; background: rgba(255,253,249,.92); padding: 6px 8px; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
+    .heart { position: absolute; right: 10px; top: 10px; border: 0; width: 31px; height: 31px; border-radius: 50%; background: rgba(255,253,249,.9); font-size: 16px; color: #554b44; }
+    .product-info { padding: 13px 1px 0; }
+    .product-category { color: var(--muted); text-transform: uppercase; letter-spacing: .13em; font-size: 9px; margin-bottom: 7px; }
+    .product-name { font-family: Georgia, serif; font-size: 18px; font-weight: 400; margin-bottom: 7px; }
+    .product-bottom { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .price { font-size: 13px; font-weight: 700; }
+    .old-price { font-size: 11px; text-decoration: line-through; color: #a69a90; margin-left: 5px; font-weight: 400; }
+    .add-btn { border: 1px solid #d9c9bc; background: transparent; padding: 8px 10px; font-size: 10px; color: #5d5047; }
+    .add-btn:hover { background: var(--ink); color: white; border-color: var(--ink); }
+    .empty { grid-column: 1/-1; padding: 40px; text-align: center; color: var(--muted); }
+    .center { text-align: center; margin-top: 35px; }
+    .story { background: #e9dfd3; }
+    .story-inner { max-width: 1180px; margin: auto; padding: 72px 24px; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 65px; }
+    .story-image { height: 420px; overflow: hidden; }
+    .story-image img { width: 100%; height: 100%; object-fit: cover; }
+    .story-copy p { color: #6d6158; line-height: 1.9; font-size: 14px; max-width: 480px; margin: 22px 0; }
+    .story-sign { font-family: Georgia, serif; color: var(--rose-dark); font-size: 25px; font-style: italic; }
+    .custom { background: var(--paper); }
+    .custom-inner { max-width: 1180px; margin: auto; padding: 68px 24px; text-align: center; }
+    .custom-inner p { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 520px; margin: 18px auto 24px; }
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; margin: 36px auto 0; max-width: 850px; }
+    .step { padding: 22px; border: 1px solid var(--line); }
+    .step-num { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--rose); border-radius: 50%; color: var(--rose-dark); font-family: Georgia, serif; margin: 0 auto 12px; }
+    .step h3 { font-family: Georgia, serif; font-size: 18px; font-weight: 400; margin-bottom: 7px; }
+    .step p { font-size: 11px; margin: 0; }
+    .newsletter { background: var(--sage); color: white; }
+    .newsletter-inner { max-width: 1180px; margin: auto; padding: 44px 24px; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    .newsletter h2 { font-size: 31px; }
+    .newsletter p { color: rgba(255,255,255,.82); font-size: 12px; margin: 8px 0 0; }
+    .newsletter-form { display: flex; max-width: 430px; width: 100%; }
+    .newsletter-form input { min-width: 0; flex: 1; border: 0; padding: 14px; outline: none; font-size: 12px; }
+    .newsletter-form button { border: 0; background: var(--ink); color: white; padding: 0 18px; font-size: 11px; }
+    footer { background: #27221e; color: #f9f1e8; }
+    .footer-main { max-width: 1180px; margin: auto; padding: 48px 24px 36px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 35px; }
+    .footer-brand { font-family: Georgia, serif; font-size: 22px; margin-bottom: 12px; }
+    .footer-about { color: #bdb1a6; font-size: 12px; line-height: 1.8; max-width: 260px; }
+    footer h4 { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin: 5px 0 17px; }
+    .footer-links { display: grid; gap: 11px; color: #cbbfb4; font-size: 12px; }
+    .footer-links a:hover { color: white; }
+    .copyright { border-top: 1px solid #494039; padding: 17px 24px; text-align: center; color: #a99c91; font-size: 10px; }
+    .toast { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 120px); background: var(--ink); color: white; padding: 12px 18px; font-size: 12px; z-index: 60; box-shadow: var(--shadow); transition: transform .3s; }
+    .toast.show { transform: translate(-50%, 0); }
+    .cart-panel { position: fixed; top: 0; right: -420px; width: min(400px,100%); height: 100dvh; background: var(--paper); z-index: 50; box-shadow: -10px 0 40px #0002; transition: right .3s; display: flex; flex-direction: column; }
+    .cart-panel.open { right: 0; }
+    .cart-head { display: flex; justify-content: space-between; align-items: center; padding: 22px; border-bottom: 1px solid var(--line); }
+    .cart-head h3 { font-family: Georgia, serif; font-size: 25px; font-weight: 400; margin: 0; }
+    .close-cart { border: 0; background: transparent; font-size: 25px; }
+    .cart-items { padding: 18px 22px; overflow: auto; flex: 1; }
+    .cart-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .cart-item img { width: 65px; height: 75px; object-fit: cover; }
+    .cart-item-info { flex: 1; }
+    .cart-item-info strong { font-family: Georgia, serif; font-weight: 400; font-size: 16px; }
+    .cart-item-info small { display: block; color: var(--muted); margin-top: 6px; }
+    .qty { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 12px; }
+    .qty button { border: 1px solid var(--line); background: transparent; width: 24px; height: 24px; }
+    .remove { border: 0; background: transparent; color: var(--rose-dark); font-size: 11px; }
+    .cart-foot { padding: 20px 22px; border-top: 1px solid var(--line); }
+    .cart-total { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 14px; }
+    .cart-foot .btn { width: 100%; }
+    .overlay { position: fixed; inset: 0; background: #211b1780; z-index: 40; display: none; }
+    .overlay.show { display: block; }
+    @media (max-width: 850px) {
+      .nav-links { gap: 15px; }
+      .hero { gap: 25px; padding-top: 40px; }
+      .hero-art { min-height: 390px; }
+      .hero-photo { height: 375px; }
+      .floating-card { width: 155px; }
+      .floating-card img { height: 80px; }
+      .product-grid { grid-template-columns: repeat(2,1fr); gap: 24px 15px; }
+      .story-inner { gap: 35px; }
+      .footer-main { grid-template-columns: 1.4fr 1fr 1fr; }
+      .footer-main > div:last-child { grid-column: 2/4; }
+    }
+    @media (max-width: 620px) {
+      .announcement { font-size: 9px; }
+      .nav { padding: 12px 16px; }
+      .brand { min-width: 0; }
+      .brand-name { font-size: 15px; }
+      .brand-sub { font-size: 8px; }
+      .brand-mark { width: 37px; height: 37px; font-size: 20px; }
+      .menu-toggle { display: grid; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--cream); padding: 20px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
+      .nav-links.open { display: flex; }
+      .hero { display: flex; flex-direction: column; align-items: stretch; padding: 42px 18px 35px; gap: 25px; }
+      h1 { font-size: 47px; }
+      .hero-copy { font-size: 14px; }
+      .hero-art { min-height: 330px; }
+      .hero-photo { width: 82%; height: 315px; }
+      .floating-card { width: 140px; bottom: 8px; padding: 10px; }
+      .floating-card img { height: 70px; }
+      .floating-card strong { font-size: 14px; }
+      .round-stamp { width: 75px; height: 75px; font-size: 8px; }
+      .benefit-row { grid-template-columns: repeat(2,1fr); padding: 20px 12px; gap: 18px 6px; }
+      .benefit { font-size: 10px; }
+      .section { padding: 55px 17px; }
+      .section-head { display: block; }
+      .section-desc { margin-top: 14px; }
+      .toolbar { align-items: stretch; }
+      .filters { width: 100%; }
+      .search-sort { width: 100%; }
+      .search { flex: 1; width: auto; }
+      .product-grid { gap: 24px 12px; }
+      .product-name { font-size: 16px; }
+      .product-bottom { align-items: flex-start; flex-direction: column; }
+      .add-btn { width: 100%; }
+      .story-inner { display: flex; flex-direction: column; padding: 52px 18px; gap: 28px; }
+      .story-image { width: 100%; height: 300px; }
+      .custom-inner { padding: 55px 18px; }
+      .steps { grid-template-columns: 1fr; gap: 12px; }
+      .newsletter-inner { display: block; padding: 36px 18px; }
+      .newsletter-form { margin-top: 20px; }
+      .footer-main { grid-template-columns: 1fr 1fr; padding: 38px 18px; gap: 28px 20px; }
+      .footer-main > div:first-child { grid-column: 1/-1; }
+      .footer-main > div:last-child { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">A LITTLE SOMETHING HANDMADE, JUST FOR YOU ✦ CUSTOM ORDERS OPEN</div>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Nandani Handmade Gifts home">
+        <span class="brand-mark">N</span>
+        <span><span class="brand-name">Nandani</span><span class="brand-sub">Handmade Gifts & Crafts</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#shop">Shop All</a><a href="#story">Our Story</a><a href="#custom">Custom Orders</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="cartOpen" aria-label="Open shopping cart">♡<span class="cart-count" id="cartCount">0</span></button>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">Made with love, made for you</div>
+        <h1>Little things.<br><em>Big feelings.</em></h1>
+        <p class="hero-copy">Thoughtful handmade gifts, tiny keepsakes and personalized pieces that turn everyday moments into something worth remembering.</p>
+        <div class="hero-buttons">
+          <a class="btn" href="#shop">EXPLORE THE COLLECTION <span>↗</span></a>
+          <a class="btn btn-outline" href="#custom">MAKE IT PERSONAL</a>
+        </div>
+        <div class="hero-note"><span class="tiny-stars">★★★★★</span><span>Handcrafted in small batches · Made with care</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo"><img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=1000&q=85" alt="Beautifully wrapped handmade gift" /></div>
+        <div class="floating-card">
+          <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=500&q=85" alt="Gift packaging detail" />
+          <strong>A gift that feels like you</strong><small>Personalized · Thoughtful · Handmade</small>
+        </div>
+        <div class="round-stamp">HANDMADE<br>WITH LOVE<br>♡ SINCE DAY ONE</div>
+      </div>
+    </section>
+
+    <div class="benefits">
+      <div class="benefit-row">
+        <div class="benefit"><span>✿</span><span>Made with care</span></div>
+        <div class="benefit"><span>♡</span><span>Personalized gifts</span></div>
+        <div class="benefit"><span>♧</span><span>Small-batch creations</span></div>
+        <div class="benefit"><span>✧</span><span>Gift-ready packaging</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="shop">
+      <div class="section-head">
+        <div><div class="section-kicker">The little things shop</div><h2>Find your kind of lovely.</h2></div>
+        <p class="section-desc">Made for birthdays, best friends, little celebrations—or simply because someone deserves a smile.</p>
+      </div>
+      <div class="toolbar">
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="All">All pieces</button>
+          <button class="filter" data-category="Keychains">Keychains</button>
+          <button class="filter" data-category="Stickers">Stickers</button>
+          <button class="filter" data-category="Gifts">Gift sets</button>
+          <button class="filter" data-category="Bookmarks">Bookmarks</button>
+        </div>
+        <div class="search-sort">
+          <input class="search" id="searchInput" type="search" placeholder="Search products..." aria-label="Search products" />
+          <select class="sort" id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="center"><a class="btn btn-outline" href="#custom">CAN'T FIND IT? REQUEST A CUSTOM PIECE ↗</a></div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-inner">
+        <div class="story-image"><img src="https://images.unsplash.com/photo-1455390582262-044cace277a8?auto=format&fit=crop&w=900&q=85" alt="Notebook and creative workspace" loading="lazy" /></div>
+        <div class="story-copy">
+          <div class="section-kicker">A little about us</div>
+          <h2>Not just a gift.<br>A little piece of heart.</h2>
+          <p>Nandani is built around a simple thought: the smallest things can carry the biggest meaning. Every design is chosen, packed and prepared with care, so your gift feels personal—not ordinary.</p>
+          <p>From tiny keychains to thoughtful custom creations, we're here to help you celebrate people, memories and moments in your own way.</p>
+          <div class="story-sign">With love, Nandani ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom" id="custom">
+      <div class="custom-inner">
+        <div class="section-kicker">Your idea, our hands</div>
+        <h2>Dream it. We'll make it personal.</h2>
+        <p>Have a name, colour, favourite quote or special idea in mind? Tell us what you're imagining and we'll help you create a keepsake that's uniquely yours.</p>
+        <a class="btn" id="customOrderBtn" href="#contact">START A CUSTOM ORDER ↗</a>
+        <div class="steps">
+          <div class="step"><div class="step-num">01</div><h3>Share your idea</h3><p>Tell us the name, colour, theme or occasion you have in mind.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Confirm the details</h3><p>We'll discuss design, pricing and delivery before starting.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Made just for you</h3><p>Your handmade piece is prepared with care and packed for gifting.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-inner">
+        <div><h2>A little love in your inbox.</h2><p>New drops, gift ideas and behind-the-scenes from our little craft corner.</p></div>
+        <form class="newsletter-form" id="newsletterForm"><input type="email" id="emailInput" placeholder="Your email address" aria-label="Your email address" required /><button type="submit">COUNT ME IN ↗</button></form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div><div class="footer-brand">Nandani ♡</div><p class="footer-about">Small handmade things, made with a whole lot of heart. Thank you for supporting a small creative business.</p></div>
+      <div><h4>Explore</h4><div class="footer-links"><a href="#shop">Shop all</a><a href="#story">Our story</a><a href="#custom">Custom orders</a></div></div>
+      <div><h4>Need help?</h4><div class="footer-links"><a href="#contact" id="shippingLink">Shipping & delivery</a><a href="#contact" id="faqLink">FAQs</a><a href="#contact" id="contactLink">Contact us</a></div></div>
+      <div><h4>Say hello</h4><div class="footer-links"><a href="#" id="whatsappLink">WhatsApp orders ↗</a><a href="#" id="instagramLink">Instagram ↗</a><span>Made with ♡ in India</span></div></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Nandani Handmade Gifts & Crafts. Made with love. <span> · </span> <a href="#home">Back to top ↑</a></div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+    <div class="cart-head"><h3>Your little bag</h3><button class="close-cart" id="cartClose" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot"><div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div><button class="btn" id="checkoutBtn">ORDER ON WHATSAPP ↗</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    // EDIT THESE DETAILS before publishing:
+    const BUSINESS_WHATSAPP = "9801963800"; // Replace with your WhatsApp number including country code, no + or spaces.
+    const INSTAGRAM_URL = "https://www.instagram.com/"; // Replace with your Instagram profile URL.
+
+    const products = [
+      { id: 1, name: "Personalized Name Keychain", category: "Keychains", price: 99, oldPrice: 129, tag: "Bestseller", image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85", description: "A tiny personalized keepsake." },
+      { id: 2, name: "Pastel Sticker Pack", category: "Stickers", price: 49, oldPrice: 0, tag: "Cute pick", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=85", description: "Little stickers for your favourite things." },
+      { id: 3, name: "Pressed Flower Bookmark", category: "Bookmarks", price: 129, oldPrice: 159, tag: "Handmade", image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=700&q=85", description: "A thoughtful gift for book lovers." },
+      { id: 4, name: "Mini Gift Hamper", category: "Gifts", price: 249, oldPrice: 299, tag: "Gift ready", image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=85", description: "A little bundle of happy surprises." },
+      { id: 5, name: "Floral Resin-Inspired Charm", category: "Keychains", price: 119, oldPrice: 0, tag: "New", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85", description: "A floral-inspired charm for your bag." },
+      { id: 6, name: "Cute Quote Sticker Set", category: "Stickers", price: 59, oldPrice: 0, tag: "", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=85", description: "Add a little personality to your journal." },
+      { id: 7, name: "Bestie Gift Duo", category: "Gifts", price: 199, oldPrice: 229, tag: "For besties", image: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=700&q=85", description: "A sweet surprise for your favourite person." },
+      { id: 8, name: "Minimal Floral Bookmark", category: "Bookmarks", price: 89, oldPrice: 0, tag: "", image: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=700&q=85", description: "A soft, simple detail for reading time." }
+    ];
+
+    let activeCategory = "All";
+    let cart = [];
+    const $ = (s) => document.querySelector(s);
+    const money = (n) => "₹" + n.toLocaleString("en-IN");
+
+    function safeImage(url) {
+      // A broken image gets a neutral placeholder instead of an empty box.
+      return url;
+    }
+    function renderProducts() {
+      const query = $("#searchInput").value.trim().toLowerCase();
+      let list = products.filter(p => (activeCategory === "All" || p.category === activeCategory) &&
+        (p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query) || p.description.toLowerCase().includes(query)));
+      const sort = $("#sortSelect").value;
+      if (sort === "low") list.sort((a,b) => a.price-b.price);
+      if (sort === "high") list.sort((a,b) => b.price-a.price);
+      $("#productGrid").innerHTML = list.length ? list.map(p => `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${safeImage(p.image)}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x700/f0e4d8/5b4b40?text=Handmade+with+Love';" />
+            ${p.tag ? `<span class="product-tag">${p.tag}</span>` : ""}
+            <button class="heart" aria-label="Add ${p.name} to favourites" onclick="toggleHeart(this)">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-category">${p.category}</div>
+            <h3 class="product-name">${p.name}</h3>
+            <div class="product-bottom"><div class="price">${money(p.price)} ${p.oldPrice ? `<span class="old-price">${money(p.oldPrice)}</span>` : ""}</div>
+            <button class="add-btn" onclick="addToCart(${p.id})">+ ADD TO BAG</button></div>
+          </div>
+        </article>`).join("") : `<div class="empty">No products found. Try another search or category.</div>`;
+      document.querySelectorAll(".filter").forEach(b => b.classList.toggle("active", b.dataset.category === activeCategory));
+    }
+    function toggleHeart(btn) {
+      btn.textContent = btn.textContent === "♡" ? "♥" : "♡";
+      btn.style.color = btn.textContent === "♥" ? "#a85f54" : "#554b44";
+    }
+    function addToCart(id) {
+      const found = cart.find(i => i.id === id);
+      if (found) found.qty++;
+      else cart.push({ ...products.find(p => p.id === id), qty: 1 });
+      renderCart();
+      showToast("Added to your little bag ♡");
+    }
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+      renderCart();
+    }
+    function removeItem(id) { cart = cart.filter(i => i.id !== id); renderCart(); }
+    function renderCart() {
+      $("#cartCount").textContent = cart.reduce((n,i) => n+i.qty,0);
+      $("#cartTotal").textContent = money(cart.reduce((n,i) => n+i.price*i.qty,0));
+      $("#cartItems").innerHTML = cart.length ? cart.map(i => `
+        <div class="cart-item"><img src="${i.image}" alt="${i.name}" onerror="this.src='https://placehold.co/100x120/f0e4d8/5b4b40?text=Gift'">
+          <div class="cart-item-info"><strong>${i.name}</strong><small>${money(i.price)} each</small>
+          <div class="qty"><button onclick="changeQty(${i.id},-1)" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button onclick="changeQty(${i.id},1)" aria-label="Increase quantity">+</button><button class="remove" onclick="removeItem(${i.id})">Remove</button></div></div></div>`).join("") : `<p style="color:var(--muted);line-height:1.7">Your bag is waiting for something lovely. Add a handmade favourite to get started.</p>`;
+    }
+    function openCart() { $("#cartPanel").classList.add("open"); $("#overlay").classList.add("show"); }
+    function closeCart() { $("#cartPanel").classList.remove("open"); $("#overlay").classList.remove("show"); }
+    function showToast(message) {
+      $("#toast").textContent = message;
+      $("#toast").classList.add("show");
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => $("#toast").classList.remove("show"), 2200);
+    }
+    function whatsappUrl(message) { return `https://wa.me/${BUSINESS_WHATSAPP}?text=${encodeURIComponent(message)}`; }
+    $("#filters").addEventListener("click", e => {
+      const b = e.target.closest("button[data-category]");
+      if (!b) return;
+      activeCategory = b.dataset.category;
+      renderProducts();
+    });
+    $("#searchInput").addEventListener("input", renderProducts);
+    $("#sortSelect").addEventListener("change", renderProducts);
+    $("#cartOpen").addEventListener("click", openCart);
+    $("#cartClose").addEventListener("click", closeCart);
+    $("#overlay").addEventListener("click", closeCart);
+    $("#menuToggle").addEventListener("click", () => $("#navLinks").classList.toggle("open"));
+    $("#navLinks").querySelectorAll("a").forEach(a => a.addEventListener("click", () => $("#navLinks").classList.remove("open")));
+    $("#checkoutBtn").addEventListener("click", () => {
+      if (!cart.length) { showToast("Your bag is empty for now ♡"); return; }
+      const lines = cart.map(i => `• ${i.name} x ${i.qty} — ${money(i.price*i.qty)}`).join("\n");
+      const total = cart.reduce((n,i) => n+i.price*i.qty,0);
+      const message = `Hi Nandani! I'd like to place an order:\n\n${lines}\n\nSubtotal: ${money(total)}\n\nPlease confirm availability, delivery charges and payment details.`;
+      window.open(whatsappUrl(message), "_blank", "noopener");
+    });
+    $("#customOrderBtn").addEventListener("click", e => {
+      e.preventDefault();
+      window.open(whatsappUrl("Hi Nandani! I'd like to ask about a custom handmade gift. My idea is: "), "_blank", "noopener");
+    });
+    $("#whatsappLink").addEventListener("click", e => { e.preventDefault(); window.open(whatsappUrl("Hi Nandani! I'd like to know more about your handmade products."), "_blank", "noopener"); });
+    $("#instagramLink").href = INSTAGRAM_URL;
+    $("#newsletterForm").addEventListener("submit", e => {
+      e.preventDefault();
+      showToast("Thank you! Newsletter signup needs an email service to be connected.");
+      $("#emailInput").value = "";
+    });
+    $("#year").textContent = new Date().getFullYear();
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
